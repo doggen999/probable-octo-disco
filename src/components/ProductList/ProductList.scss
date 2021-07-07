@@ -1,0 +1,25 @@
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  .sorting {
+    font-size: small;
+    .activeSort {
+      font-weight: bold;
+      font-size: large;
+      text-decoration: underline;
+    }
+  }
+  .pagination {
+    display: flex;
+    .pointer {
+      cursor: pointer;
+    }
+  }
+  .disabled {
+    color: darkgray;
+  }
+}
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+}
