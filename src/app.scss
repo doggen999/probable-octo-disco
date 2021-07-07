@@ -1,4 +1,13 @@
 @import "./styles/index.scss";
 
 .app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    padding: 0 0.5rem;
+    overflow: scroll;
+  }
 }
