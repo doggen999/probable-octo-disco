@@ -25,13 +25,6 @@ export const ProductCard = ({ product }) => {
             currency: "USD",
           })}
         </div>
-        <div className={styles.actual_price}>{`${new Intl.NumberFormat(
-          "en-US",
-          {
-            style: "currency",
-            currency: "USD",
-          }
-        ).format(product.actual_price)}`}</div>
       </div>
     </div>
   );

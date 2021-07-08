@@ -11,9 +11,7 @@ export const ProductList = ({ products }) => {
   const [paginationIndex, setPaginationIndex] = useState(0);
   const paginationSize =
     Math.floor(window.innerWidth / 130) * Math.floor(window.innerHeight / 300);
-  const handlerCallback = (sortAsc) => {
-    setSortAsc(sortAsc);
-  };
+
   return (
     <div>
       <div className={styles.listHeader}>
