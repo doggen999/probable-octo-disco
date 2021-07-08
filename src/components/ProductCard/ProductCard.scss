@@ -5,9 +5,10 @@
   height: 18rem;
   border: solid 1px transparent;
   cursor: pointer;
-  // overflow: hidden;
+
   padding: 0.25rem;
   margin: 0.25rem;
+
   &:hover {
     border: dotted 1px lightgray;
   }
