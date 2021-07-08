@@ -4,21 +4,38 @@ import PropTypes from "prop-types";
 
 import styles from "./ProductCard.scss";
 
-export const ProductCard = ({ product }) => (
-  <div className={styles.productCard}>
-    <div className={styles.productImage}>
-      {product.filename && <img src={product.filename} />}
+export const ProductCard = ({ product }) => {
+  const formatCurrency = (value, options) => {
+    return new Intl.NumberFormat(options.locale, {
+      style: "currency",
+      currency: options.currency,
+    }).format(value);
+  };
+  return (
+    <div className={styles.productCard}>
+      <div className={styles.productImage}>
+        {product.filename && <img src={product.filename} />}
+      </div>
+      <div className={styles.productData}>
+        <div className={styles.brand_name}>{product.brand_name}</div>
+        <div className={styles.product_name}>{product.product_name}</div>
+        <div className={styles.actual_price}>
+          {formatCurrency(product.actual_price, {
+            locale: "en-US",
+            currency: "USD",
+          })}
+        </div>
+        <div className={styles.actual_price}>{`${new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+          }
+        ).format(product.actual_price)}`}</div>
+      </div>
     </div>
-    <div className={styles.productData}>
-      <div className={styles.brand_name}>{product.brand_name}</div>
-      <div className={styles.product_name}>{product.product_name}</div>
-      <div className={styles.actual_price}>{`${new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(product.actual_price)}`}</div>
-    </div>
-  </div>
-);
+  );
+};
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
