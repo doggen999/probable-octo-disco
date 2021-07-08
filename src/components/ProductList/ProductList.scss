@@ -1,6 +1,8 @@
 .listHeader {
   display: flex;
   justify-content: space-between;
+  width: 95vw;
+  margin: auto;
   .sorting {
     font-size: small;
     .activeSort {
