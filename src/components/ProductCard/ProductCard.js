@@ -5,7 +5,10 @@ import PropTypes from "prop-types";
 import styles from "./ProductCard.scss";
 
 export const ProductCard = ({ product }) => {
-  const formatCurrency = (value, options) => {
+  const formatCurrency = (
+    value,
+    options = { locale: "en-US", currency: "USD" }
+  ) => {
     return new Intl.NumberFormat(options.locale, {
       style: "currency",
       currency: options.currency,
@@ -20,10 +23,7 @@ export const ProductCard = ({ product }) => {
         <div className={styles.brand_name}>{product.brand_name}</div>
         <div className={styles.product_name}>{product.product_name}</div>
         <div className={styles.actual_price}>
-          {formatCurrency(product.actual_price, {
-            locale: "en-US",
-            currency: "USD",
-          })}
+          {formatCurrency(product.actual_price)}
         </div>
       </div>
     </div>
